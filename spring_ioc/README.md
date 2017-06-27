@@ -1,10 +1,5 @@
-# Spring test (spring 学习笔记)
-
-
 
 ## IOC与DI
-
-<http://example.com/>
 简单点明：
 
 IOC(Inversion of Control)控制反转：从容器的角度来说的，就是创建实例的工作交给容器管理。
