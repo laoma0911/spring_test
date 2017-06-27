@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xmlns:p="http://www.springframework.org/schema/p"
-    xmlns:context="http://www.springframework.org/schema/context"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
-        http://www.springframework.org/schema/context
-        http://www.springframework.org/schema/context/spring-context-4.3.xsd">
-        <context:component-scan base-package="com.laoma.springtest.ioc.ioc03_自动装配">
-        </context:component-scan>
+        ">
+
+
+    <bean id="meat" class="com.laoma.springtest.ioc03_构造器注入.Meat"></bean>
+
+    <bean id="pingpang" class="com.laoma.springtest.ioc03_构造器注入.PingPang"></bean>
+
+
+    <bean id="chinese" class="com.laoma.springtest.ioc03_构造器注入.Chinese">
+        <constructor-arg name="food" ref="meat"></constructor-arg>
+        <constructor-arg name="sport" ref="pingpang"></constructor-arg>
+    </bean>
+
 </beans>

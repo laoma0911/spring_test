@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xmlns:p="http://www.springframework.org/schema/p"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
-	<bean id="bookdao" class="com.laoma.springtest.ioc.ioc01_XML配置.BookDAO"></bean>
+
+
+    <bean id="xmlBean" class="com.laoma.springtest.ioc01_xml配置Bean.XmlBean">
+        <property name="beanName" value="createByXml"/>
+        <property name="beanInfo" value="cool!!I don`t need creat by myself！"/>
+    </bean>
 </beans>

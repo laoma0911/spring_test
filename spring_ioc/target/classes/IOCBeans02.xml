@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:p="http://www.springframework.org/schema/p"
-       xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
-        http://www.springframework.org/schema/context
-        http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+      ">
 
-    <context:component-scan base-package="com.laoma.springtest.ioc.ioc02_Spring注解"></context:component-scan>
+
+    <bean id="meat" class="com.laoma.springtest.ioc02_属性的依赖注入.Meat"></bean>
+
+
+    <!--ref指像bean的实现类，如果是值类型或String类型可以用value指定，设定值即可，如value=5。-->
+    <!--我们可以在chinese里声明meat私有属性，并公开属性set方法，然后调用-->
+    <bean id="chinese" class="com.laoma.springtest.ioc02_属性的依赖注入.Chinese" autowire="byType">
+        <property name="food" ref="meat"></property>
+    </bean>
 
 </beans>
